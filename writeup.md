@@ -15,6 +15,8 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
+[TrainImagesSet]: ./examples/SignsExplore.png "Training Images Set"
+[ToNormalize]: ./examples/to_normalize.png "Image to normalize"
 [TrafficSign4]: ./examples/ex4.bmp "Traffic Sign 4"
 [TrafficSign9]: ./examples/ex9.bmp "Traffic Sign 9"
 [TrafficSign12]: ./examples/ex12.bmp "Traffic Sign 12"
@@ -53,9 +55,10 @@ I used the pickle library to load main dataset, the csv library to load and pars
 #### 2. Include an exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set.
-It is a PNG image that shows a start of images
+This is a PNG image that shows the beginning of a set of images:
 
-[Train images set]: ./examples/SignsExplore.png "Chart of all train images"
+![alt text][TrainImagesSet]
+
 
 ### Design and Test a Model Architecture
 
@@ -67,6 +70,11 @@ where 128 is a middle of source range (0..255).
 This transformation could be applied in other way by centering each image around its own mean, which is individual to each image, to elimitate intensity differency, but this was enough to achieve an acceptable level of accuracy (>=0.93) after 24 iterations of training. If there was a lower level of accuracy, I could try to smooth out the data with some filter and / or shift the average of the input image closer to 0. In addition, if there is a gap between validation and testing results, it would be possible to expand the training set by the data augmentation.
 
 Since the normalized image has a real data type, it is difficult to display it in the colored image, and the contrast of such an image remains unchanged.
+
+Source image:
+
+![alt text][ToNormalize]
+
 This is a normalization result for image [21810] in training set:
 
 ````
